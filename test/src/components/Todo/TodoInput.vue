@@ -16,7 +16,24 @@ export default {
   methods: {
     addTodo() {
       //console.log(this.newTodoItem);
-      localStorage.setItem(this.newTodoItem, this.newTodoItem);
+        /*
+        if(this.newTodoItem !==""){
+          var value = this.newTodoItem && this.newTodoItem.trim();
+          localStorage.setItem(value, value);
+          this.clearInput();
+        }
+        */
+      var value = this.newTodoItem && this.newTodoItem.trim();
+      if(value !=="") {
+        localStorage.setItem(value, value);
+        alert( "save-☆" );
+        this.clearInput();
+      } else {
+        alert( "empty!");
+      }
+    },
+    clearInput(){
+      this.newTodoItem = '';
     }
   }
 }
