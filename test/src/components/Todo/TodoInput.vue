@@ -1,6 +1,7 @@
 <template>
   <div>
-    <input type="text" v-model="newTodoItem">
+    <input type="text" v-model="newTodoItem" placeholder="input text - ☆" v-on:keyup.enter="addTodo">
+
     <button v-on:click="addTodo"> + </button>
   </div>
 </template>
@@ -10,7 +11,7 @@ export default {
   name: "TodoInput",
   data() {
     return {
-      newTodoItem:'input text - ☆'
+      newTodoItem:''
     }
   },
   methods: {
